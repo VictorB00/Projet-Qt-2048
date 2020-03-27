@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <iostream>
+
 #include <plateau2048.h>
 
 using namespace std;
@@ -38,7 +39,13 @@ int main(int argc, char *argv[])
     plateau.coup('z');
     cout<<plateau;
 
+    plateau.ajout();
+    cout<<plateau;
 
+    plateau.ajout();
+    cout<<plateau;
+
+    cout<<plateau.restePlace()<<endl;
 
     return app.exec();
 }

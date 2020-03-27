@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <time.h>
+
 #include "plateau2048.h"
 
 Plateau2048::Plateau2048(QObject *parent) : QObject(parent)
@@ -90,4 +93,42 @@ void Plateau2048::coup(char direction){// direction vaut 'z','q','s' ou 'd' selo
 
     }
 
+}
+
+void Plateau2048::ajout(){
+    if (restePlace()){//on vérifie qu'il y a une place vide
+
+        srand (time(NULL));
+
+        int proba=rand()%10;
+        int newValeur;
+        if (proba==9){//1 chance sur 10
+            newValeur=4;
+        }
+        else{
+            newValeur=2;
+        }
+
+        int x=rand()%4;
+        int y=rand()%4;
+        while(table[x][y]!=0){
+            x=rand()%4;
+            y=rand()%4;
+        }
+        table[x][y]=newValeur;
+
+    }
+}
+
+bool Plateau2048::restePlace(){
+    bool reste=false;
+    for (int i=0;i<4;i++){
+        for (int j=0;j<4;j++){
+            if(table[i][j]==0){
+                reste=true;
+                break;
+            }
+        }
+    }
+    return reste;
 }
