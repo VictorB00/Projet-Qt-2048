@@ -7,7 +7,7 @@ Window {
     width: 400
     height: 500
     color: "#f5f5dc"
-    title: qsTr("Hello World")
+    title: qsTr("Jeu de 2048")
 
 
     Rectangle {
