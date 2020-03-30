@@ -9,6 +9,7 @@ Window {
     color: "#f5f5dc"
     title: qsTr("Hello World")
 
+
     Rectangle {
         id: rectangle16
         x: 34
@@ -17,6 +18,23 @@ Window {
         height: 325
         color: "#c8ad7f"
         border.color: "#000000c8"
+        focus: true
+        Keys.onPressed: {
+         switch (event.key) {
+         case Qt.Key_Up:
+             plateau.coup(2);
+         break;
+         case Qt.Key_Down:
+             plateau.coup(3);
+         break;
+         case Qt.Key_Left:
+             plateau.coup(0);
+         break;
+         case Qt.Key_Right:
+             plateau.coup(1);
+         break;
+         }
+        }
 
         Grid {
             id: grid
@@ -29,8 +47,6 @@ Window {
             flow: Grid.LeftToRight
             anchors.verticalCenterOffset: 0
             spacing: 5
-            layer.format: ShaderEffectSource.Alpha
-            layer.enabled: true
             anchors.horizontalCenterOffset: 0
             rows: 4
             columns: 4
@@ -46,7 +62,7 @@ Window {
 
                 Text {
                     id: element
-                    text: plateau.listePlateau(0)
+                    text: plateau.listePlateau[0]
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
@@ -62,7 +78,7 @@ Window {
 
                 Text {
                     id: element4
-                    text: qsTr("Text")
+                    text: plateau.listePlateau[4]
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
@@ -77,7 +93,7 @@ Window {
 
                 Text {
                     id: element8
-                    text: qsTr("Text")
+                    text: plateau.listePlateau[8]
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
@@ -92,7 +108,7 @@ Window {
 
                 Text {
                     id: element12
-                    text: qsTr("Text")
+                    text: plateau.listePlateau[12]
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
@@ -107,7 +123,7 @@ Window {
 
                 Text {
                     id: element1
-                    text: qsTr("Text")
+                    text: plateau.listePlateau[1]
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
@@ -122,7 +138,7 @@ Window {
 
                 Text {
                     id: element5
-                    text: qsTr("Text")
+                    text: plateau.listePlateau[5]
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
@@ -137,7 +153,7 @@ Window {
 
                 Text {
                     id: element9
-                    text: qsTr("Text")
+                    text: plateau.listePlateau[9]
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
@@ -152,7 +168,7 @@ Window {
 
                 Text {
                     id: element13
-                    text: qsTr("Text")
+                    text: plateau.listePlateau[13]
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
@@ -167,7 +183,7 @@ Window {
 
                 Text {
                     id: element2
-                    text: qsTr("Text")
+                    text: plateau.listePlateau[2]
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
@@ -182,7 +198,7 @@ Window {
 
                 Text {
                     id: element6
-                    text: qsTr("Text")
+                    text: plateau.listePlateau[6]
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
@@ -197,7 +213,7 @@ Window {
 
                 Text {
                     id: element10
-                    text: qsTr("Text")
+                    text: plateau.listePlateau[10]
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
@@ -212,7 +228,7 @@ Window {
 
                 Text {
                     id: element14
-                    text: qsTr("Text")
+                    text: plateau.listePlateau[14]
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
@@ -227,7 +243,7 @@ Window {
 
                 Text {
                     id: element3
-                    text: qsTr("Text")
+                    text: plateau.listePlateau[3]
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
@@ -242,7 +258,7 @@ Window {
 
                 Text {
                     id: element7
-                    text: qsTr("Text")
+                    text: plateau.listePlateau[7]
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
@@ -257,7 +273,7 @@ Window {
 
                 Text {
                     id: element11
-                    text: qsTr("Text")
+                    text: plateau.listePlateau[11]
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
@@ -272,7 +288,7 @@ Window {
 
                 Text {
                     id: element15
-                    text: qsTr("Text")
+                    text: plateau.listePlateau[15]
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
@@ -325,6 +341,7 @@ Window {
         height: 27
         color: "#ffffff"
     }
+
 
 
 

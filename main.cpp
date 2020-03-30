@@ -10,6 +10,7 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     Plateau2048 plateau;
+    plateau.ajout();
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
@@ -25,7 +26,7 @@ int main(int argc, char *argv[])
 
     engine.load(url);
 
-
+    /*
     //partie test de la classe Plateau2048
 
     cout<<plateau;
@@ -33,14 +34,14 @@ int main(int argc, char *argv[])
     plateau.set(2,0,4);
     cout<<plateau;
 
-    plateau.coup('z');
+    plateau.coup(0);
     cout<<plateau;
     plateau.set(1,0,4);
     plateau.set(2,0,4);
     plateau.set(3,0,4);
     cout<<plateau;
 
-    plateau.coup('z');
+    plateau.coup(0);
     cout<<plateau;
 
     plateau.ajout();
@@ -50,7 +51,7 @@ int main(int argc, char *argv[])
     cout<<plateau;
 
     cout<<plateau.restePlace()<<endl;
-
+    */
 
 
     return app.exec();

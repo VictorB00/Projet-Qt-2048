@@ -16,8 +16,8 @@ public:
     friend ostream& operator<< (ostream& , Plateau2048&);
 
     void set(int x, int y, int value);
-    void coup(char direction); //joue un coup dans une des 4 directions
-    void ajout(); //ajoute un nombre aléatoirement
+    Q_INVOKABLE void coup(int direction); //joue un coup dans une des 4 directions
+    Q_INVOKABLE void ajout(); //ajoute un nombre aléatoirement
     bool restePlace(); //permet de savoir si il reste au moins 1 case libre (c'est à dire au moins un 0 dans table)
 
     QList<QString> readPlateau();

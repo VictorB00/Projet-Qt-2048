@@ -1,7 +1,10 @@
 #include <stdlib.h>
 #include <time.h>
+#include <iostream>
 
 #include "plateau2048.h"
+
+using namespace std;
 
 Plateau2048::Plateau2048(QObject *parent) : QObject(parent)
 {
@@ -32,7 +35,7 @@ ostream& operator<<(ostream& out, Plateau2048& plateau){
     return out;
 }
 
-void Plateau2048::coup(char direction){// direction vaut 'z','q','s' ou 'd' selon le coup selectionné
+void Plateau2048::coup(int direction){// direction vaut 0,1,2 ou 3 selon le coup selectionné
 
     for (int n=0;n<4;n++){//on parcourt les lignes ou colonnes (selon la direction)
 
@@ -45,16 +48,16 @@ void Plateau2048::coup(char direction){// direction vaut 'z','q','s' ou 'd' selo
         for (int k=0;k<4;k++){//on parcourt la ligne (ou colonne) en question
             int valeur;
 
-            if (direction=='z'){//haut
+            if (direction==0){//haut
                 valeur=table[k][n];
             }
-            if (direction=='s'){//bas
+            if (direction==1){//bas
                 valeur=table[4-k-1][n];
             }
-            if (direction=='q'){//gauche
+            if (direction==2){//gauche
                 valeur=table[n][k];
             }
-            if (direction=='d'){//droite
+            if (direction==3){//droite
                 valeur=table[n][4-k-1];
             }
 
@@ -77,23 +80,33 @@ void Plateau2048::coup(char direction){// direction vaut 'z','q','s' ou 'd' selo
         }
 
         for (int l=0;l<4;l++){//puis on met a jour la ligne (ou colonne) de table a partir de nouveau
-            if (direction=='z'){//haut
+            if (direction==0){//haut
                 table[l][n]=nouveau[l];
             }
-            if (direction=='s'){//bas
+            if (direction==1){//bas
                 table[4-l-1][n]=nouveau[l];
             }
-            if (direction=='q'){//gauche
+            if (direction==2){//gauche
                 table[n][l]=nouveau[l];
             }
-            if (direction=='d'){//droite
+            if (direction==3){//droite
                 table[n][4-l-1]=nouveau[l];
             }
         }
 
 
     }
+
     plateauChanged();
+
+    if (restePlace()){
+        ajout();
+    }
+    else{
+        cout<<"Partie finie"<<endl<<flush;
+    }
+
+
 }
 
 void Plateau2048::ajout(){
