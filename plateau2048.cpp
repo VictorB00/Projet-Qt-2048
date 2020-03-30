@@ -16,6 +16,7 @@ Plateau2048::Plateau2048(QObject *parent) : QObject(parent)
 
 void Plateau2048::set(int x, int y, int value){
     table[x][y]=value;
+    plateauChanged();
 }
 
 ostream& operator<<(ostream& out, Plateau2048& plateau){
@@ -92,7 +93,7 @@ void Plateau2048::coup(char direction){// direction vaut 'z','q','s' ou 'd' selo
 
 
     }
-
+    plateauChanged();
 }
 
 void Plateau2048::ajout(){
@@ -118,6 +119,7 @@ void Plateau2048::ajout(){
         table[x][y]=newValeur;
 
     }
+    plateauChanged();
 }
 
 bool Plateau2048::restePlace(){
@@ -132,3 +134,28 @@ bool Plateau2048::restePlace(){
     }
     return reste;
 }
+
+QList<QString> Plateau2048::readPlateau(){
+    QList<QString> liste = {};
+
+    for (int i=0;i<4;i++){
+        for (int j=0;j<4;j++){
+            int valeur = table[i][j];
+            if (valeur!=0){
+                liste << QString::number(valeur);
+            }
+            else{
+                liste << QString(); //string vide au lieu de 0
+            }
+
+        }
+    }
+
+    return liste;
+
+}
+
+
+
+
+

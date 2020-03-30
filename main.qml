@@ -43,6 +43,14 @@ Window {
                 height: 75
                 color: "#ffffff"
                 border.color: "#c8ad7f"
+
+                Text {
+                    id: element
+                    text: plateau.listePlateau(0)
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                }
             }
 
             Rectangle {
@@ -51,6 +59,14 @@ Window {
                 height: 75
                 color: "#ffffff"
                 border.color: "#c8ad7f"
+
+                Text {
+                    id: element4
+                    text: qsTr("Text")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                }
             }
 
             Rectangle {
@@ -58,6 +74,14 @@ Window {
                 width: 75
                 height: 75
                 color: "#ffffff"
+
+                Text {
+                    id: element8
+                    text: qsTr("Text")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                }
             }
 
             Rectangle {
@@ -65,6 +89,14 @@ Window {
                 width: 75
                 height: 75
                 color: "#ffffff"
+
+                Text {
+                    id: element12
+                    text: qsTr("Text")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                }
             }
 
             Rectangle {
@@ -72,6 +104,14 @@ Window {
                 width: 75
                 height: 75
                 color: "#ffffff"
+
+                Text {
+                    id: element1
+                    text: qsTr("Text")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                }
             }
 
             Rectangle {
@@ -79,6 +119,14 @@ Window {
                 width: 75
                 height: 75
                 color: "#ffffff"
+
+                Text {
+                    id: element5
+                    text: qsTr("Text")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                }
             }
 
             Rectangle {
@@ -86,6 +134,14 @@ Window {
                 width: 75
                 height: 75
                 color: "#ffffff"
+
+                Text {
+                    id: element9
+                    text: qsTr("Text")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                }
             }
 
             Rectangle {
@@ -93,6 +149,14 @@ Window {
                 width: 75
                 height: 75
                 color: "#ffffff"
+
+                Text {
+                    id: element13
+                    text: qsTr("Text")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                }
             }
 
             Rectangle {
@@ -100,6 +164,14 @@ Window {
                 width: 75
                 height: 75
                 color: "#ffffff"
+
+                Text {
+                    id: element2
+                    text: qsTr("Text")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                }
             }
 
             Rectangle {
@@ -107,6 +179,14 @@ Window {
                 width: 75
                 height: 75
                 color: "#ffffff"
+
+                Text {
+                    id: element6
+                    text: qsTr("Text")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                }
             }
 
             Rectangle {
@@ -114,6 +194,14 @@ Window {
                 width: 75
                 height: 75
                 color: "#ffffff"
+
+                Text {
+                    id: element10
+                    text: qsTr("Text")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                }
             }
 
             Rectangle {
@@ -121,6 +209,14 @@ Window {
                 width: 75
                 height: 75
                 color: "#ffffff"
+
+                Text {
+                    id: element14
+                    text: qsTr("Text")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                }
             }
 
             Rectangle {
@@ -128,6 +224,14 @@ Window {
                 width: 75
                 height: 75
                 color: "#ffffff"
+
+                Text {
+                    id: element3
+                    text: qsTr("Text")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                }
             }
 
             Rectangle {
@@ -135,6 +239,14 @@ Window {
                 width: 75
                 height: 75
                 color: "#ffffff"
+
+                Text {
+                    id: element7
+                    text: qsTr("Text")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                }
             }
 
             Rectangle {
@@ -142,6 +254,14 @@ Window {
                 width: 75
                 height: 75
                 color: "#ffffff"
+
+                Text {
+                    id: element11
+                    text: qsTr("Text")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                }
             }
 
             Rectangle {
@@ -149,6 +269,14 @@ Window {
                 width: 75
                 height: 75
                 color: "#ffffff"
+
+                Text {
+                    id: element15
+                    text: qsTr("Text")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                }
             }
         }
     }
