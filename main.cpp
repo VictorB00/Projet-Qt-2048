@@ -3,12 +3,14 @@
 #include <QtQml>
 #include <iostream>
 
+
 #include <plateau2048.h>
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
+
     Plateau2048 plateau;
     plateau.ajout();
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);

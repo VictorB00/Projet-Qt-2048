@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>SecondPage.qml</file>
+        <file>StartingPage.qml</file>
     </qresource>
 </RCC>
