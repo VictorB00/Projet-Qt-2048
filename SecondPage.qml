@@ -20,23 +20,6 @@ Window {
         height: 325
         color: "#c8ad7f"
         border.color: "#000000c8"
-        focus: true
-        Keys.onPressed: {
-            switch (event.key) {
-            case Qt.Key_Up:
-                plateau.coup(2);
-                break;
-            case Qt.Key_Down:
-                plateau.coup(3);
-                break;
-            case Qt.Key_Left:
-                plateau.coup(0);
-                break;
-            case Qt.Key_Right:
-                plateau.coup(1);
-                break;
-            }
-        }
 
 
         Grid {
@@ -325,6 +308,34 @@ Window {
             width: 70
             height: 50
             color: "#c8ad7f"
+
+            Text {
+                id: element16
+                x: 0
+                width: 70
+                height: 25
+                color: "#ffffff"
+                text: qsTr("Score")
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.top: parent.top
+                anchors.topMargin: 0
+                font.pixelSize: 12
+            }
+
+            Text {
+                id: score
+                width: 70
+                height: 25
+                text: plateau.score
+                verticalAlignment: Text.AlignTop
+                horizontalAlignment: Text.AlignHCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 0
+                font.pixelSize: 12
+            }
         }
 
         Rectangle {
@@ -332,6 +343,33 @@ Window {
             width: 70
             height: 50
             color: "#c8ad7f"
+
+            Text {
+                id: element18
+                width: 70
+                height: 25
+                color: "#ffffff"
+                text: qsTr("Score Max")
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.top: parent.top
+                anchors.topMargin: 0
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 12
+            }
+
+            Text {
+                id: scoreBest
+                width: 70
+                height: 25
+                text: plateau.scoreMax
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 0
+                verticalAlignment: Text.AlignTop
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 12
+            }
         }
     }
 
@@ -345,4 +383,37 @@ Window {
         font.bold: true
         font.pixelSize: 30
     }
+
+    Button {
+        id: reset
+        x: 69
+        y: 64
+        text: qsTr("Nouvelle Partie")
+        highlighted: true
+        checkable: false
+        onClicked: plateau.reset();
+        focus: true
+        Keys.onPressed: {
+            switch (event.key) {
+            case Qt.Key_Up:
+                plateau.coup(2);
+                break;
+            case Qt.Key_Down:
+                plateau.coup(3);
+                break;
+            case Qt.Key_Left:
+                plateau.coup(0);
+                break;
+            case Qt.Key_Right:
+                plateau.coup(1);
+                break;
+            }
+        }
+    }
 }
+
+/*##^##
+Designer {
+    D{i:38;anchors_y:0}
+}
+##^##*/

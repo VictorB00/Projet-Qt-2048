@@ -15,6 +15,7 @@ public:
 
     friend ostream& operator<< (ostream& , Plateau2048&);
 
+    void initTable(int valeur);
     void set(int x, int y, int value);
     Q_INVOKABLE void coup(int direction); //joue un coup dans une des 4 directions
     Q_INVOKABLE void ajout(); //ajoute un nombre aléatoirement
@@ -22,15 +23,23 @@ public:
 
     QList<QString> readPlateau();
 
+    QString readScore() {
+     return QString::number(score);
+    }
+
+    QString readScoreMax() {
+     return QString::number(scoreMax);
+    }
+
+    Q_PROPERTY(QString score READ readScore NOTIFY scoreChanged)
+    Q_PROPERTY(QString scoreMax READ readScoreMax NOTIFY scoreMaxChanged)
     Q_PROPERTY(QList<QString> listePlateau READ readPlateau NOTIFY plateauChanged)
 
     void loadScoreMax();
-
     void saveScoreMax();
-
     void updateScore();
 
-
+    Q_INVOKABLE void reset();
 
 private:
 
@@ -44,6 +53,8 @@ private:
 signals:
 
     void plateauChanged();
+    void scoreChanged();
+    void scoreMaxChanged();
 };
 
 #endif // PLATEAU2048_H

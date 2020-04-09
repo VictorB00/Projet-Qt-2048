@@ -11,15 +11,18 @@ using namespace std;
 Plateau2048::Plateau2048(QObject *parent) : QObject(parent)
 {
     taille=4;
+    score=0;
+    initTable(0);
+    loadScoreMax();
+}
 
+void Plateau2048::initTable(int valeur){
     for (int i=0;i<4;i++){
         for (int j=0;j<4;j++){
-            table[i][j]=0;
+            table[i][j]=valeur;
         }
     }
-
-    score=0;
-    loadScoreMax();
+    plateauChanged();
 }
 
 void Plateau2048::set(int x, int y, int value){
@@ -104,6 +107,8 @@ void Plateau2048::coup(int direction){// direction vaut 0,1,2 ou 3 selon le coup
 
     plateauChanged();
 
+    updateScore();
+
     if (restePlace()){
         ajout();
     }
@@ -138,6 +143,7 @@ void Plateau2048::ajout(){
 
     }
     plateauChanged();
+    updateScore();
 }
 
 bool Plateau2048::restePlace(){
@@ -175,10 +181,7 @@ QList<QString> Plateau2048::readPlateau(){
 
 void Plateau2048::loadScoreMax(){
     QFile file("meilleurScore.txt");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        cout << "Erreur lors de l'ouverture du fichier";
-        return;
-    }
+    file.open(QIODevice::ReadOnly | QIODevice::Text); //cree le fichier si il n'existe pas deja
 
     QTextStream in(&file);
     if (!in.atEnd()) {
@@ -186,7 +189,8 @@ void Plateau2048::loadScoreMax(){
         scoreMax=line.toInt();
     }
     else{
-        cout << "Erreur : fichier de score vide !";
+        scoreMax=0;
+        saveScoreMax();
     }
 
 
@@ -195,7 +199,7 @@ void Plateau2048::loadScoreMax(){
 void Plateau2048::saveScoreMax(){
     QFile file("meilleurScore.txt");
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)){
-        cout << "Erreur lors de l'a lecture'ouverture du fichier";
+        cout << "Erreur lors de l'ouverture du fichier";
         return;
     }
 
@@ -213,14 +217,21 @@ void Plateau2048::updateScore(){
     }
 
     score = total;
+    scoreChanged();
+
     if (score>scoreMax){
         scoreMax=score;
         saveScoreMax();
+        scoreMaxChanged();
     }
 
 }
 
-
+void Plateau2048::reset(){
+    initTable(0);
+    ajout();
+    updateScore();
+}
 
 
 

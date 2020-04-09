@@ -38,7 +38,7 @@ Item {
                 y: 111
                 width: 119
                 height: 14
-                text: qsTr("ACCEUIL")
+                text: qsTr("ACCUEIL")
                 font.bold: true
                 font.pixelSize: 30
             }
