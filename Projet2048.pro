@@ -32,3 +32,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     plateau2048.h
+
+DISTFILES += \
+    Pageacceuil.qml \
+    pag2.qml
