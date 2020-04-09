@@ -24,12 +24,23 @@ public:
 
     Q_PROPERTY(QList<QString> listePlateau READ readPlateau NOTIFY plateauChanged)
 
+    void loadScoreMax();
+
+    void saveScoreMax();
+
+    void updateScore();
+
 
 
 private:
 
     int taille;
     int table[4][4];
+
+    int score;
+    int scoreMax;
+
+
 signals:
 
     void plateauChanged();

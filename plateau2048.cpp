@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <iostream>
+#include <QFile>
+#include <QTextStream>
 
 #include "plateau2048.h"
 
@@ -15,6 +17,9 @@ Plateau2048::Plateau2048(QObject *parent) : QObject(parent)
             table[i][j]=0;
         }
     }
+
+    score=0;
+    loadScoreMax();
 }
 
 void Plateau2048::set(int x, int y, int value){
@@ -165,6 +170,53 @@ QList<QString> Plateau2048::readPlateau(){
     }
 
     return liste;
+
+}
+
+void Plateau2048::loadScoreMax(){
+    QFile file("meilleurScore.txt");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+        cout << "Erreur lors de l'ouverture du fichier";
+        return;
+    }
+
+    QTextStream in(&file);
+    if (!in.atEnd()) {
+        QString line = in.readLine();
+        scoreMax=line.toInt();
+    }
+    else{
+        cout << "Erreur : fichier de score vide !";
+    }
+
+
+}
+
+void Plateau2048::saveScoreMax(){
+    QFile file("meilleurScore.txt");
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)){
+        cout << "Erreur lors de l'a lecture'ouverture du fichier";
+        return;
+    }
+
+    QTextStream out(&file);
+    out << scoreMax;
+}
+
+void Plateau2048::updateScore(){
+    int total=0;
+
+    for (int i=0;i<4;i++){
+        for (int j=0;j<4;j++){
+            total += table[i][j];
+        }
+    }
+
+    score = total;
+    if (score>scoreMax){
+        scoreMax=score;
+        saveScoreMax();
+    }
 
 }
 
