@@ -32,24 +32,39 @@ Window {
     SecondPage {}
 
     }
+    Component {
+    id: third_page
+    ThirdPage {}
 
-    Row {
-        x: 100
-        y: 250
+    }
+
+    Column {
+        x: 141
+        y: 196
         spacing: 10
 
               Button {
                   text: "2048 4x4"
-                  onClicked: stack.push(second_page)
+                  onClicked: {
+
+                      stack.push(second_page);
+                      plateau.redimension2();
+                      plateau.reset();}
+              }
+              Button {
+                  text: "2048 5x5"
+                  onClicked: {
+
+                      stack.push(third_page);
+                      plateau.redimension();  //
+                      plateau.reset() ;
+                  }
               }
               Button {
                   text: "Retour"
                   enabled: stack.depth > 1
                   onClicked: stack.pop()
 
-              }
-              Text {
-                  text: stack.depth
               }
 
 }

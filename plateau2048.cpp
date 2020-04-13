@@ -10,15 +10,31 @@ using namespace std;
 
 Plateau2048::Plateau2048(QObject *parent) : QObject(parent)
 {
-    taille=4;
+
+    taille = 4;
+
     score=0;
     initTable(0);
     loadScoreMax();
 }
 
+void Plateau2048:: redimension(){
+
+    taille = 5;
+    plateauChanged();
+
+}
+
+void Plateau2048:: redimension2(){
+
+    taille = 4;
+    plateauChanged();
+
+}
+
 void Plateau2048::initTable(int valeur){
-    for (int i=0;i<4;i++){
-        for (int j=0;j<4;j++){
+    for (int i=0;i<taille;i++){
+        for (int j=0;j<taille;j++){
             table[i][j]=valeur;
         }
     }
@@ -32,7 +48,6 @@ void Plateau2048::set(int x, int y, int value){
 
 ostream& operator<<(ostream& out, Plateau2048& plateau){
     out << "Plateau de jeu :" << endl;
-
     for (int i=0;i<4;i++){
         for (int j=0;j<4;j++){
             out << plateau.table[i][j] << " ";
@@ -45,28 +60,28 @@ ostream& operator<<(ostream& out, Plateau2048& plateau){
 
 void Plateau2048::coup(int direction){// direction vaut 0,1,2 ou 3 selon le coup selectionné
 
-    for (int n=0;n<4;n++){//on parcourt les lignes ou colonnes (selon la direction)
+    for (int n=0;n<taille;n++){//on parcourt les lignes ou colonnes (selon la direction)
 
-        int nouveau[4]; //nouvelle ligne (ou colonne) qui remplacera l'actuelle
-        for (int x=0;x<4;x++){
+        int nouveau[taille]; //nouvelle ligne (ou colonne) qui remplacera l'actuelle
+        for (int x=0;x<taille;x++){
             nouveau[x]=0;
         }
 
         int current=0;//pour savoir jusqu'a quelle case des nombres ont ete accumulés
-        for (int k=0;k<4;k++){//on parcourt la ligne (ou colonne) en question
+        for (int k=0;k<taille;k++){//on parcourt la ligne (ou colonne) en question
             int valeur;
 
             if (direction==0){//haut
                 valeur=table[k][n];
             }
             if (direction==1){//bas
-                valeur=table[4-k-1][n];
+                valeur=table[taille-k-1][n];
             }
             if (direction==2){//gauche
                 valeur=table[n][k];
             }
             if (direction==3){//droite
-                valeur=table[n][4-k-1];
+                valeur=table[n][taille-k-1];
             }
 
             if (valeur!=0){//si la case contient un nombre
@@ -87,18 +102,18 @@ void Plateau2048::coup(int direction){// direction vaut 0,1,2 ou 3 selon le coup
             }
         }
 
-        for (int l=0;l<4;l++){//puis on met a jour la ligne (ou colonne) de table a partir de nouveau
+        for (int l=0;l<taille;l++){//puis on met a jour la ligne (ou colonne) de table a partir de nouveau
             if (direction==0){//haut
                 table[l][n]=nouveau[l];
             }
             if (direction==1){//bas
-                table[4-l-1][n]=nouveau[l];
+                table[taille-l-1][n]=nouveau[l];
             }
             if (direction==2){//gauche
                 table[n][l]=nouveau[l];
             }
             if (direction==3){//droite
-                table[n][4-l-1]=nouveau[l];
+                table[n][taille-l-1]=nouveau[l];
             }
         }
 
@@ -148,7 +163,7 @@ void Plateau2048::ajout(){
 
 bool Plateau2048::restePlace(){
     bool reste=false;
-    for (int i=0;i<4;i++){
+    for (int i=0;i<taille;i++){
         for (int j=0;j<4;j++){
             if(table[i][j]==0){
                 reste=true;
@@ -162,8 +177,8 @@ bool Plateau2048::restePlace(){
 QList<QString> Plateau2048::readPlateau(){
     QList<QString> liste = {};
 
-    for (int i=0;i<4;i++){
-        for (int j=0;j<4;j++){
+    for (int i=0;i<taille;i++){
+        for (int j=0;j<taille;j++){
             int valeur = table[i][j];
             if (valeur!=0){
                 liste << QString::number(valeur);
@@ -210,8 +225,8 @@ void Plateau2048::saveScoreMax(){
 void Plateau2048::updateScore(){
     int total=0;
 
-    for (int i=0;i<4;i++){
-        for (int j=0;j<4;j++){
+    for (int i=0;i<taille;i++){
+        for (int j=0;j<taille;j++){
             total += table[i][j];
         }
     }
