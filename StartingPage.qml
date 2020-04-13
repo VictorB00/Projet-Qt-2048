@@ -38,10 +38,19 @@ Item {
                 y: 111
                 width: 119
                 height: 14
-                text: qsTr("ACCUEIL")
+                color: "#ae5122"
+                text: qsTr("2048")
+                horizontalAlignment: Text.AlignHCenter
+                anchors.horizontalCenter: parent.horizontalCenter
                 font.bold: true
                 font.pixelSize: 30
             }
         }
     }
 }
+
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+##^##*/

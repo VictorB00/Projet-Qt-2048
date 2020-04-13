@@ -5,6 +5,7 @@ import QtQuick.Controls 2.2
 import QtQuick.Controls 2.14
 
 
+
 Window {
     id: window
     visible: true
@@ -43,7 +44,7 @@ Window {
                 id: rectangle
                 width: 75
                 height: 75
-                color: "#ffffff"
+                //color: "#ffffff"
                 border.color: "#c8ad7f"
 
                 Text {
@@ -53,14 +54,42 @@ Window {
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
                 }
+
+                color: (element.text === "2"
+                           ? '#a58c5f'
+                           : element.text === "4"
+                           ? '#b0976a'
+                           : element.text === "8"
+                           ? '#bca274'
+                           : element.text === "16"
+                           ? '#c8ad7f'
+                           : '#d4b88a' )
+                          /* : element.text === "16"
+                           ? '#c8ad7f'
+                           : element.text === "32"
+                           ? '#d4b88a'
+                           : element.text === "64"
+                           ? '#e0c495'
+                           : '#ecd0a0')*/
+
             }
 
             Rectangle {
                 id: rectangle1
                 width: 75
                 height: 75
-                color: "#ffffff"
+
                 border.color: "#c8ad7f"
+                color: (element4.text === "2"
+                           ? '#a58c5f'
+                           : element4.text === "4"
+                           ? '#b0976a'
+                           : element4.text === "8"
+                           ? '#bca274'
+                           : element4.text === "16"
+                           ? '#c8ad7f'
+                           : '#d4b88a' )
+
 
                 Text {
                     id: element4
@@ -75,7 +104,15 @@ Window {
                 id: rectangle2
                 width: 75
                 height: 75
-                color: "#ffffff"
+                color: (element8.text === "2"
+                           ? '#a58c5f'
+                           : element8.text === "4"
+                           ? '#b0976a'
+                           : element8.text === "8"
+                           ? '#bca274'
+                           : element8.text === "16"
+                           ? '#c8ad7f'
+                           : '#d4b88a' )
 
                 Text {
                     id: element8
@@ -90,7 +127,15 @@ Window {
                 id: rectangle3
                 width: 75
                 height: 75
-                color: "#ffffff"
+                color: (element12.text === "2"
+                           ? '#a58c5f'
+                           : element12.text === "4"
+                           ? '#b0976a'
+                           : element12.text === "8"
+                           ? '#bca274'
+                           : element12.text === "16"
+                           ? '#c8ad7f'
+                           : '#d4b88a' )
 
                 Text {
                     id: element12
@@ -105,7 +150,15 @@ Window {
                 id: rectangle4
                 width: 75
                 height: 75
-                color: "#ffffff"
+                color: (element1.text === "2"
+                           ? '#a58c5f'
+                           : element1.text === "4"
+                           ? '#b0976a'
+                           : element1.text === "8"
+                           ? '#bca274'
+                           : element1.text === "16"
+                           ? '#c8ad7f'
+                           : '#d4b88a' )
 
                 Text {
                     id: element1
@@ -120,7 +173,15 @@ Window {
                 id: rectangle5
                 width: 75
                 height: 75
-                color: "#ffffff"
+                color: (element5.text === "2"
+                           ? '#a58c5f'
+                           : element5.text === "4"
+                           ? '#b0976a'
+                           : element5.text === "8"
+                           ? '#bca274'
+                           : element5.text === "16"
+                           ? '#c8ad7f'
+                           : '#d4b88a' )
 
                 Text {
                     id: element5
@@ -135,7 +196,15 @@ Window {
                 id: rectangle6
                 width: 75
                 height: 75
-                color: "#ffffff"
+                color: (element9.text === "2"
+                           ? '#a58c5f'
+                           : element9.text === "4"
+                           ? '#b0976a'
+                           : element9.text === "8"
+                           ? '#bca274'
+                           : element9.text === "16"
+                           ? '#c8ad7f'
+                           : '#d4b88a' )
 
                 Text {
                     id: element9
@@ -150,7 +219,15 @@ Window {
                 id: rectangle7
                 width: 75
                 height: 75
-                color: "#ffffff"
+                color: (element13.text === "2"
+                           ? '#a58c5f'
+                           : element13.text === "4"
+                           ? '#b0976a'
+                           : element13.text === "8"
+                           ? '#bca274'
+                           : element13.text === "16"
+                           ? '#c8ad7f'
+                           : '#d4b88a' )
 
                 Text {
                     id: element13
@@ -165,7 +242,15 @@ Window {
                 id: rectangle8
                 width: 75
                 height: 75
-                color: "#ffffff"
+                color: (element2.text === "2"
+                           ? '#a58c5f'
+                           : element2.text === "4"
+                           ? '#b0976a'
+                           : element2.text === "8"
+                           ? '#bca274'
+                           : element2.text === "16"
+                           ? '#c8ad7f'
+                           : '#d4b88a' )
 
                 Text {
                     id: element2
@@ -180,7 +265,15 @@ Window {
                 id: rectangle9
                 width: 75
                 height: 75
-                color: "#ffffff"
+                color: (element6.text === "2"
+                           ? '#a58c5f'
+                           : element6.text === "4"
+                           ? '#b0976a'
+                           : element6.text === "8"
+                           ? '#bca274'
+                           : element6.text === "16"
+                           ? '#c8ad7f'
+                           : '#d4b88a' )
 
                 Text {
                     id: element6
@@ -195,7 +288,15 @@ Window {
                 id: rectangle10
                 width: 75
                 height: 75
-                color: "#ffffff"
+                color: (element10.text === "2"
+                           ? '#a58c5f'
+                           : element10.text === "4"
+                           ? '#b0976a'
+                           : element10.text === "8"
+                           ? '#bca274'
+                           : element10.text === "16"
+                           ? '#c8ad7f'
+                           : '#d4b88a' )
 
                 Text {
                     id: element10
@@ -210,7 +311,15 @@ Window {
                 id: rectangle11
                 width: 75
                 height: 75
-                color: "#ffffff"
+                color: (element14.text === "2"
+                           ? '#a58c5f'
+                           : element14.text === "4"
+                           ? '#b0976a'
+                           : element14.text === "8"
+                           ? '#bca274'
+                           : element14.text === "16"
+                           ? '#c8ad7f'
+                           : '#d4b88a' )
 
                 Text {
                     id: element14
@@ -225,7 +334,15 @@ Window {
                 id: rectangle12
                 width: 75
                 height: 75
-                color: "#ffffff"
+                color: (element3.text === "2"
+                           ? '#a58c5f'
+                           : element3.text === "4"
+                           ? '#b0976a'
+                           : element3.text === "8"
+                           ? '#bca274'
+                           : element3.text === "16"
+                           ? '#c8ad7f'
+                           : '#d4b88a' )
 
                 Text {
                     id: element3
@@ -240,7 +357,15 @@ Window {
                 id: rectangle13
                 width: 75
                 height: 75
-                color: "#ffffff"
+                color: (element7.text === "2"
+                           ? '#a58c5f'
+                           : element7.text === "4"
+                           ? '#b0976a'
+                           : element7.text === "8"
+                           ? '#bca274'
+                           : element7.text === "16"
+                           ? '#c8ad7f'
+                           : '#d4b88a' )
 
                 Text {
                     id: element7
@@ -255,7 +380,15 @@ Window {
                 id: rectangle14
                 width: 75
                 height: 75
-                color: "#ffffff"
+                color: (element11.text === "2"
+                           ? '#a58c5f'
+                           : element11.text === "4"
+                           ? '#b0976a'
+                           : element11.text === "8"
+                           ? '#bca274'
+                           : element11.text === "16"
+                           ? '#c8ad7f'
+                           : '#d4b88a' )
 
                 Text {
                     id: element11
@@ -270,7 +403,15 @@ Window {
                 id: rectangle15
                 width: 75
                 height: 75
-                color: "#ffffff"
+                color: (element15.text === "2"
+                           ? '#a58c5f'
+                           : element15.text === "4"
+                           ? '#b0976a'
+                           : element15.text === "8"
+                           ? '#bca274'
+                           : element15.text === "16"
+                           ? '#c8ad7f'
+                           : '#d4b88a' )
 
                 Text {
                     id: element15
@@ -279,15 +420,6 @@ Window {
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
                 }
-            }
-
-            Rectangle {
-                id: rectangle19
-                x: 252
-                y: 81
-                width: 107
-                height: 27
-                color: "#ffffff"
             }
 
         }
