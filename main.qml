@@ -60,12 +60,6 @@ Window {
                       plateau.reset() ;
                   }
               }
-              Button {
-                  text: "Retour"
-                  enabled: stack.depth > 1
-                  onClicked: stack.pop()
-
-              }
 
 }
 }
