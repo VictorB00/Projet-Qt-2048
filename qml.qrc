@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>SecondPage.qml</file>
         <file>StartingPage.qml</file>
+        <file>ThirdPage.qml</file>
     </qresource>
 </RCC>
