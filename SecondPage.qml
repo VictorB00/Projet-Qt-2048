@@ -542,6 +542,25 @@ Window {
             }
         }
     }
+
+    Rectangle {
+        id: rectangle19
+        x: 218
+        y: 78
+        width: 126
+        height: 33
+        color: "#ffffff"
+        border.color: "#ed5a5a"
+
+        Text {
+            id: etatPartie
+            text: plateau.partieFinie
+            anchors.fill: parent
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.pixelSize: 12
+        }
+    }
 }
 
 /*##^##
