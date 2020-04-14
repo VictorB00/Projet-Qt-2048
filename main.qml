@@ -46,18 +46,19 @@ Window {
               Button {
                   text: "2048 4x4"
                   onClicked: {
-
-                      stack.push(second_page);
                       plateau.redimension2();
-                      plateau.reset();}
+                      plateau.reset();
+                      stack.push(second_page);
+                      }
               }
               Button {
                   text: "2048 5x5"
                   onClicked: {
-
-                      stack.push(third_page);
-                      plateau.redimension();  //
+                      plateau.redimension();
                       plateau.reset() ;
+                      stack.push(third_page);
+
+
                   }
               }
 

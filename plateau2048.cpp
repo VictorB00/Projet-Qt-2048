@@ -33,6 +33,10 @@ void Plateau2048:: redimension2(){
 }
 
 void Plateau2048::initTable(int valeur){
+    if(valeur < 0){
+        throw("Erreur : valeur négative");
+    }
+
     for (int i=0;i<taille;i++){
         for (int j=0;j<taille;j++){
             table[i][j]=valeur;
@@ -42,6 +46,16 @@ void Plateau2048::initTable(int valeur){
 }
 
 void Plateau2048::set(int x, int y, int value){
+    if (x<0 || x>=taille){
+        throw ("Premier indice pas dans le bon domaine");
+    }
+    if (y<0 || y>=taille){
+        throw ("Deuxième indice pas dans le bon domaine");
+    }
+    if(value < 0){
+        throw("Erreur : valeur négative");
+    }
+
     table[x][y]=value;
     plateauChanged();
 }
@@ -59,6 +73,10 @@ ostream& operator<<(ostream& out, Plateau2048& plateau){
 }
 
 void Plateau2048::coup(int direction){// direction vaut 0,1,2 ou 3 selon le coup selectionné
+
+    if (!(direction==0 || direction==1 || direction==2 || direction==3)){
+        throw("Problème sur la valeur de l'argument indiquant la direction");
+    }
 
     for (int n=0;n<taille;n++){//on parcourt les lignes ou colonnes (selon la direction)
 
